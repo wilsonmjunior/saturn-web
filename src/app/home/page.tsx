@@ -1,35 +1,25 @@
 import { List } from "@/components/templates/List";
-import { Filter, useFiltersStore, InitializerFiltersStore } from "@/store"
+import { useFiltersStore, InitializerFiltersStore } from "@/store"
 
-const filters = [{
-  name: 'producers',
-  label: 'Produtores',
-},{
-  name: 'products',
-  label: 'Produtos',
-},{
-  name: 'harvest',
-  label: 'Safra',
-}] as Filter[]
-
-const Filters = () => {
-  const { filters } = useFiltersStore.getState().state;
-  return (
-    <div className="mt-4">
-      { filters.map(filter => (
-          <li key={filter.name}>{filter.label}</li>
-        ))
-      }
-    </div>
-  )
-}
+// const filters = [{
+//   name: 'producers',
+//   label: 'Produtores',
+// },{
+//   name: 'products',
+//   label: 'Produtos',
+// },{
+//   name: 'harvest',
+//   label: 'Safra',
+// }] as Filter[]
 
 export default async function Home() {
-  useFiltersStore.setState({
-    state: {
-      filters,
-    }
-  })
+  // useFiltersStore.setState({
+  //   state: {
+  //     filters,
+  //   }
+  // })
+
+  const { filters } = useFiltersStore.getState().state;
 
   return (
     <div className="flex flex-col items-center mt-8">
